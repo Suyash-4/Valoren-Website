@@ -1,25 +1,41 @@
 import { React } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-      <nav className="fixed top-10 p-5 w-full flex justify-center items-center py-4 z-50">
-        <div className="flex items-center justify-between gap-6 px-6 py-4 bg-[rgba(36,34,32,0.36)] backdrop-blur-[15.2px] border border-transparent rounded-2xl shadow-lg max-w-[1100px] w-full">
+      <nav className="fixed top-5 p-5 w-full flex justify-center items-center py-4 z-50">
+        <div className="flex items-center justify-between gap-15 px-6 py-5 bg-[rgba(36,34,32,0.04)] backdrop-blur-[15.2px] border border-transparent rounded-2xl shadow-lg max-w-[1100px] w-full">
           {/* Brand Name */}
           <div className="flex items-center">
             <img
               src="public/Valoren_Lion-removebg-preview.png"
               alt="Leo"
-              className="w-12 h-12"
+              className="w-10 h-10 sm:w-12 sm:h-12"
             />
-            <p className="text-[1.85rem] font-light text-white ml-3">VALORÉN</p>
+            <p className="ml-3 font-light text-white text-lg sm:text-2xl md:text-[1.85rem]">
+              VALORÉN
+            </p>
           </div>
+          {/* Hamburger Icon */}
+          <button
+            className="sm:hidden flex flex-col justify-center items-center w-10 h-10"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-6 h-0.5 bg-[#e9d2b2] mb-1 transition-all ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`}></span>
+            <span className={`block w-6 h-0.5 bg-[#e9d2b2] mb-1 transition-all ${menuOpen ? "opacity-0" : ""}`}></span>
+            <span className={`block w-6 h-0.5 bg-[#e9d2b2] transition-all ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></span>
+          </button>
           {/* Navigation Links */}
-          <ul className="flex list-none text-[#e9d2b2] gap-8 m-0 p-2">
+          <ul className={`flex-col sm:flex-row flex list-none text-[#e9d2b2] gap-8 m-0 p-2 absolute sm:static top-[70px] left-0 w-full sm:w-auto bg-[rgba(36,34,32,0.96)] sm:bg-transparent rounded-2xl sm:rounded-none shadow-lg sm:shadow-none transition-all duration-300 z-40 ${menuOpen ? "flex" : "hidden"} sm:flex`}>
             <li>
               <a
                 href="#services"
-                className="text-[0.85rem] font-medium no-underline text-[#e9d2b2]"
+                className="font-medium no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                onClick={() => setMenuOpen(false)}
               >
                 About us
               </a>
@@ -27,31 +43,30 @@ const Navbar = () => {
             <li>
               <a
                 href="#work"
-                className="text-[0.85rem] font-medium no-underline text-[#e9d2b2]"
+                className="font-medium no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                onClick={() => setMenuOpen(false)}
               >
-                WORK
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className="text-[0.85rem] font-medium no-underline text-[#e9d2b2]"
-              >
-                ABOUT
+                Our Heritage
               </a>
             </li>
             <li>
               <a
                 href="#blog"
-                className="text-[0.85rem] font-medium no-underline text-[#e9d2b2]"
+                className="font-medium no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                onClick={() => setMenuOpen(false)}
               >
-                BLOG
+                Contact
               </a>
             </li>
+            {/* CTA Button (mobile) */}
+            <li className="block sm:hidden mt-2">
+              <button className="w-full px-4 py-2 bg-[#e9d2b2] text-black rounded text-base sm:text-sm md:text-base lg:text-lg">
+                LET'S TALK
+              </button>
+            </li>
           </ul>
-
-          {/* CTA Button */}
-          <button className="px-4 py-2 bg-[#e9d2b2] text-black rounded">
+          {/* CTA Button (desktop) */}
+          <button className="hidden sm:block px-4 py-2 bg-[#e9d2b2] text-black rounded text-base sm:text-sm md:text-base lg:text-lg">
             LET'S TALK
           </button>
         </div>
