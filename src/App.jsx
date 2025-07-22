@@ -4,6 +4,7 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 import Navbar from "./pages/navbar";
 import Home from "./pages/home";
+
 import SecondPage from "./pages/SecondPage";
 import { ReactLenis, useLenis } from "lenis/react";
 const App = () => {

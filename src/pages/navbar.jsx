@@ -1,5 +1,6 @@
 import { React } from "react";
 import { useState } from "react";
+import { PiShoppingCartSimple } from "react-icons/pi";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,6 +8,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-5 p-5 w-full flex justify-center items-center py-4 z-50">
+        <div></div>
         <div className="flex items-center justify-between gap-15 px-6 py-5 bg-[rgba(36,34,32,0.04)] backdrop-blur-[15.2px] border border-transparent rounded-2xl shadow-lg max-w-[1100px] w-full">
           {/* Brand Name */}
           <div className="flex items-center">
@@ -25,12 +27,28 @@ const Navbar = () => {
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-6 h-0.5 bg-[#e9d2b2] mb-1 transition-all ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`}></span>
-            <span className={`block w-6 h-0.5 bg-[#e9d2b2] mb-1 transition-all ${menuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`block w-6 h-0.5 bg-[#e9d2b2] transition-all ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></span>
+            <span
+              className={`block w-6 h-0.5 bg-[#e9d2b2] mb-1 transition-all ${
+                menuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-[#e9d2b2] mb-1 transition-all ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-[#e9d2b2] transition-all ${
+                menuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+            ></span>
           </button>
           {/* Navigation Links */}
-          <ul className={`flex-col sm:flex-row flex list-none text-[#e9d2b2] gap-7 m-0 p-2 absolute sm:static top-[90px] left-0 w-full sm:w-auto bg-[rgba(36,34,32,0.39)] sm:bg-transparent rounded-2xl sm:rounded-none shadow-lg sm:shadow-none transition-all duration-300 z-40 ${menuOpen ? "flex" : "hidden"} sm:flex`}>
+          <ul
+            className={`flex-col sm:flex-row flex list-none text-[#e9d2b2] gap-7 m-0 p-2 absolute sm:static top-[90px] left-0 w-full sm:w-auto bg-[rgba(36,34,32,0.39)] sm:bg-transparent rounded-2xl sm:rounded-none shadow-lg sm:shadow-none transition-all duration-300 z-40 ${
+              menuOpen ? "flex" : "hidden"
+            } sm:flex`}
+          >
             <li>
               <a
                 href="#services"
@@ -69,6 +87,11 @@ const Navbar = () => {
           <button className="hidden sm:block px-4 py-2 bg-[#e9d2b2] text-black rounded text-base sm:text-sm md:text-base lg:text-lg">
             LET'S TALK
           </button>
+        </div>
+        <div className="cart text-[#e9d2b2] text-2xl absolute right-10 top-13">
+          <a href="#cart">
+            <PiShoppingCartSimple />
+          </a>
         </div>
       </nav>
     </>
