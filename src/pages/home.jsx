@@ -1,71 +1,37 @@
-import { React, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const Home = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5; // ✅ Reduce speed to 0.5x
+      videoRef.current.playbackRate = 0.25;
     }
   }, []);
 
   return (
-    <div>
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-          zIndex: -1,
-          overflow: "hidden",
-        }}
-      >
+    <div >
+      {/* Background Video (fixed) */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
           ref={videoRef}
-          src="public/Videos/Valoren_intro_final.mp4"
+          src="/Videos/Valoren_intro_final.mp4" // ✅ make sure path is correct
           autoPlay
           loop
           muted
           playsInline
-          style={{
-            width: "100vw",
-            height: "100vh",
-            objectFit: "cover",
-            pointerEvents: "none",
-          }}
+          className="w-full h-full object-cover pointer-events-none"
         />
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            zIndex: 1,
-            width: "100vw",
-            height: "100vh",
-            background: "rgba(200,200,200,0.3)",
-            pointerEvents: "none",
-          }}
-        />
+        <div className="absolute inset-0 bg-black/40 z-10" /> {/* dark overlay */}
       </div>
-      <div
-        style={{
-          position: "absolute",
-          zIndex: 2,
-          padding: "20px",
-          color: "white",
-          bottom: 40,
-          left: "50%",
-          transform: "translateX(-50%)",
-          pointerEvents: "none",
-          textAlign: "center",
-          fontSize: "3rem",
-        }}
-      >
-        <h1>Built with Discipline.</h1>
-        <p>
-          <i>Worn with purpose.</i>
+
+      {/* Foreground Content */}
+      <div className="relative z-20 flex flex-col items-center justify-end bottom-20 h-screen text-white px-6 text-center">
+        <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          Built with Discipline.
+        </h1>
+        <p className="italic mt-4 text-xl sm:text-2xl md:text-3xl">
+          Worn with purpose.
         </p>
       </div>
     </div>

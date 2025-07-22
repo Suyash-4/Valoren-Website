@@ -30,7 +30,7 @@ const Navbar = () => {
             <span className={`block w-6 h-0.5 bg-[#e9d2b2] transition-all ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></span>
           </button>
           {/* Navigation Links */}
-          <ul className={`flex-col sm:flex-row flex list-none text-[#e9d2b2] gap-8 m-0 p-2 absolute sm:static top-[70px] left-0 w-full sm:w-auto bg-[rgba(36,34,32,0.96)] sm:bg-transparent rounded-2xl sm:rounded-none shadow-lg sm:shadow-none transition-all duration-300 z-40 ${menuOpen ? "flex" : "hidden"} sm:flex`}>
+          <ul className={`flex-col sm:flex-row flex list-none text-[#e9d2b2] gap-7 m-0 p-2 absolute sm:static top-[90px] left-0 w-full sm:w-auto bg-[rgba(36,34,32,0.39)] sm:bg-transparent rounded-2xl sm:rounded-none shadow-lg sm:shadow-none transition-all duration-300 z-40 ${menuOpen ? "flex" : "hidden"} sm:flex`}>
             <li>
               <a
                 href="#services"
