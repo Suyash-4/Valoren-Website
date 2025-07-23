@@ -88,7 +88,7 @@ const Navbar = () => {
             LET'S TALK
           </button>
         </div>
-        <div className="cart text-[#e9d2b2] text-2xl absolute right-10 top-13">
+        <div className="cart text-[#e9d2b2] text-2xl absolute right-23 top-11 sm:top-35 sm:right-18 xl:right-10 xl:top-13">
           <a href="#cart">
             <PiShoppingCartSimple />
           </a>

@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* Background Video (fixed) */}
+      {/* Background Video */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
           ref={videoRef}
@@ -32,7 +32,7 @@ const Home = () => {
           playsInline
           className="w-full h-full object-cover pointer-events-none"
         />
-        <div className="absolute inset-0 bg-black/50 z-10" />{" "}
+        <div className="absolute inset-0 bg-black/20 z-10" />{" "}
         {/* dark overlay */}
       </div>
 
