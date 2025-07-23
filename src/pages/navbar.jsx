@@ -11,13 +11,13 @@ const Navbar = () => {
         <div></div>
         <div className="flex items-center justify-between gap-15 px-6 py-5 bg-[rgba(36,34,32,0.04)] backdrop-blur-[15.2px] border border-transparent rounded-2xl shadow-lg max-w-[1100px] w-full">
           {/* Brand Name */}
-          <div className="flex items-center">
+          <div className="flex items-center select-none">
             <img
-              src="public/Valoren_Lion-removebg-preview.png"
+              src="public/LionLogoGold.png"
               alt="Leo"
               className="w-10 h-10 sm:w-12 sm:h-12"
             />
-            <p className="ml-3 font-light text-white text-lg sm:text-2xl md:text-[1.85rem]">
+            <p className="ml-3  text-white font-light text-lg sm:text-2xl md:text-[1.85rem] pointer-events-none select-none">
               VALORÉN
             </p>
           </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#services"
-                className="font-medium no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                className=" no-underline font-extralight text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
                 onClick={() => setMenuOpen(false)}
               >
                 About us
@@ -61,7 +61,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#work"
-                className="font-medium no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                className="font-extralight no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
                 onClick={() => setMenuOpen(false)}
               >
                 Our Heritage
@@ -70,7 +70,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#blog"
-                className="font-medium no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                className="font-extralight no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
                 onClick={() => setMenuOpen(false)}
               >
                 Contact

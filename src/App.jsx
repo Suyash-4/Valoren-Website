@@ -23,8 +23,13 @@ const App = () => {
     <>
       <ReactLenis root />
       <Navbar />
-      <Home />
-      <SecondPage />
+      <section className="relative min-h-screen w-full">
+        <Home />
+      </section>
+
+      <section className="relative min-h-screen w-full ">
+        <SecondPage />
+      </section>
     </>
   );
 };
