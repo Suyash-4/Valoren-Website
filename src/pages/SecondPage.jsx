@@ -9,9 +9,9 @@ import "../index.css";
 const SecondPage = () => {
   return (
     <div className="main-body w-full h-screen flex flex-row bg-black">
-      <div className="containerL bg-amber-200 min-w-1/2 flex flex-col items-start justify-evenly pl-5 pt-10">
+      <div className="containerL min-w-1/2 flex flex-col items-start justify-evenly pl-5 ">
         <div className=" w-full h-fit ">
-          <div className="flex flex-col gap-1.5 text-[2.5rem] font-bold text-white bg-red-800">
+          <div className="flex flex-col gap-2.5 text-2xl font-bold text-white bg-">
             <h1>Every</h1>
             <h1>Second</h1>
             <h1>Earned.</h1>
@@ -35,9 +35,8 @@ const SecondPage = () => {
           </div>
         </div>
       </div>
-      <div className="containerR bg-amber-800 min-w-1/2 flex flex-col items-start justify-evenly pr-5 pt-10">
-        <div className=" w-full h-fit bg-purple-400"> </div>
-        <div className=" w-full h-fit text-[1.5rem] text-white bg-blue-700"></div>
+      <div className="containerR  min-w-1/2 flex flex-col items-start justify-evenly pr-5 pt-10">
+        <div className=" w-full h-[180px] bg-purple-400"> </div>
       </div>
     </div>
   );

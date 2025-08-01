@@ -2,7 +2,7 @@
 const StarBorder = ({
   as: Component = "button",
   className = "",
-  color = "white",
+  color = "#E9D2B2", // Gold tone
   speed = "6s",
   thickness = 1,
   children,
@@ -10,54 +10,35 @@ const StarBorder = ({
 }) => {
   return (
     <Component
-      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
+      className={`relative inline-block overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_0_0_2px_#E9D2B2] ${className}`}
       style={{
         padding: `${thickness}px 0`,
         ...rest.style,
       }}
       {...rest}
     >
+      {/* Animated Star Border on Hover */}
       <div
-        className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
+        className="absolute w-[300%] h-[50%] opacity-60 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0 pointer-events-none"
         style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
+          background: `radial-gradient(circle, ${color}, transparent 12%)`,
           animationDuration: speed,
         }}
       ></div>
       <div
-        className="absolute w-[300%] h-[50%] opacity-70 top-[-10px] left-[-250%] rounded-full animate-star-movement-top z-0"
+        className="absolute w-[300%] h-[50%] opacity-60 top-[-10px] left-[-250%] rounded-full animate-star-movement-top z-0 pointer-events-none"
         style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
+          background: `radial-gradient(circle, ${color}, transparent 12%)`,
           animationDuration: speed,
         }}
       ></div>
-      <div className="relative z-1 bg-gradient-to-b from-black to-gray-900 border border-gray-800 text-white text-center text-[16px] py-[16px] px-[26px] rounded-[20px]">
-        {children}
+
+      {/* Main Button Content */}
+      <div className="relative z-10 bg-gradient-to-b from-[#1f1d1b] to-[#2f2e2d] border border-[#3e3d3c] text-[#e9d2b2] font-light text-center text-[15px] py-[12px] px-[24px] rounded-xl hover:text-white transition-all duration-300">
+        {children || "LET'S TALK"}
       </div>
     </Component>
   );
 };
 
 export default StarBorder;
-
-// tailwind.config.js
-// module.exports = {
-//   theme: {
-//     extend: {
-//       animation: {
-//         'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
-//         'star-movement-top': 'star-movement-top linear infinite alternate',
-//       },
-//       keyframes: {
-//         'star-movement-bottom': {
-//           '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
-//           '100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
-//         },
-//         'star-movement-top': {
-//           '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
-//           '100%': { transform: 'translate(100%, 0%)', opacity: '0' },
-//         },
-//       },
-//     },
-//   }
-// }

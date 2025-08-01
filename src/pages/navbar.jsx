@@ -1,6 +1,7 @@
 import { React } from "react";
 import { useState } from "react";
 import { PiShoppingCartSimple } from "react-icons/pi";
+import StarBorder from "../AnimatedComponents/StarBorder";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,14 +46,14 @@ const Navbar = () => {
           </button>
           {/* Navigation Links */}
           <ul
-            className={`flex-col sm:flex-row flex list-none text-[#e9d2b2] gap-7 m-0 p-2 absolute sm:static top-[90px] left-0 w-full sm:w-auto bg-[rgba(36,34,32,0.39)] sm:bg-transparent rounded-2xl sm:rounded-none shadow-lg sm:shadow-none transition-all duration-300 z-40 ${
+            className={`flex-col sm:flex-row flex list-none text-[#e9d2b2] gap-7 m-0 p-7 text-2xl absolute sm:static top-[90px] left-0 w-full sm:w-auto bg-black/60 sm:bg-transparent backdrop-blur-[15.2px] sm:backdrop-blur-none border border-transparent rounded-2xl sm:rounded-none shadow-lg sm:shadow-none transition-all duration-300 z-40 ${
               menuOpen ? "flex" : "hidden"
             } sm:flex`}
           >
             <li>
               <a
                 href="#services"
-                className=" no-underline font-extralight text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                className="font-extralight no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg transition-all duration-300 ease-in-out hover:-translate-y-[3px] hover:text-[#f5e1c6]"
                 onClick={() => setMenuOpen(false)}
               >
                 About us
@@ -61,16 +62,16 @@ const Navbar = () => {
             <li>
               <a
                 href="#work"
-                className="font-extralight no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                className="font-extralight no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg transition-all duration-300 ease-in-out hover:-translate-y-[3px] hover:text-[#f5e1c6]"
                 onClick={() => setMenuOpen(false)}
               >
-                Our Heritage
+                Shop
               </a>
             </li>
             <li>
               <a
                 href="#blog"
-                className="font-extralight no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg"
+                className="font-extralight no-underline text-[#e9d2b2] text-base sm:text-sm md:text-base lg:text-lg transition-all duration-300 ease-in-out hover:-translate-y-[3px] hover:text-[#f5e1c6]"
                 onClick={() => setMenuOpen(false)}
               >
                 Contact
@@ -78,17 +79,17 @@ const Navbar = () => {
             </li>
             {/* CTA Button (mobile) */}
             <li className="block sm:hidden mt-2">
-              <button className="w-full px-4 py-2 bg-[#e9d2b2] text-black rounded text-base sm:text-sm md:text-base lg:text-lg">
-                LET'S TALK
+              <button className="w-full px-4 py-2 text-black rounded text-base sm:text-sm md:text-base lg:text-lg">
+                <StarBorder />
               </button>
             </li>
           </ul>
           {/* CTA Button (desktop) */}
-          <button className="hidden sm:block px-4 py-2 bg-[#e9d2b2] text-black rounded text-base sm:text-sm md:text-base lg:text-lg">
-            LET'S TALK
+          <button className="hidden sm:block px-4 py-2 text-black rounded text-base sm:text-sm md:text-base lg:text-lg">
+            <StarBorder />
           </button>
         </div>
-        <div className="cart text-[#e9d2b2] text-2xl absolute right-23 top-11 sm:top-35 sm:right-18 xl:right-10 xl:top-13">
+        <div className="cart text-[#e9d2b2] text-2xl absolute right-23 top-11 sm:top-50 sm:right-22 md:top-50 md:right-25 lg:top-40 xl:top-18.5  xl:right-10 2xl:right-20 2xl:text-3xl">
           <a href="#cart">
             <PiShoppingCartSimple />
           </a>
